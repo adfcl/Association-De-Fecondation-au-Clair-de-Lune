@@ -1,0 +1,187 @@
+/* Palette principale */
+:root {
+  --bg: #fffdf9;
+  --fg: #1e293b;
+  --muted: #475569;
+  --accent: #2563eb;
+  --honey: #facc15;
+  --card: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* --- Structure générale --- */
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--fg);
+  background: linear-gradient(180deg, #fffefc 0%, #fdf8e3 100%);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* --- Header --- */
+header {
+  background: linear-gradient(135deg, #e0f2fe 0%, #fef9c3 100%);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  position: relative;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), var(--honey));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Navigation --- */
+nav {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid #e2e8f0;
+  color: var(--accent);
+  font-weight: 500;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+nav a:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* --- Sélecteur de langue --- */
+.lang-switch {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow);
+  z-index: 1000;
+}
+
+.lang-switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+
+/* --- Contenu principal --- */
+main {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+main h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+main h3 {
+  margin-top: 2rem;
+  color: var(--honey);
+}
+
+main p {
+  margin: 1rem 0;
+  font-size: 1.05rem;
+  color: var(--fg);
+}
+
+/* --- Liens dans le texte --- */
+main a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition);
+}
+
+main a:hover {
+  border-color: var(--accent);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #e2e8f0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  background: #f9fafb;
+  margin-top: 4rem;
+}
+
+/* --- Galerie (inchangée mais raffinée) --- */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.gallery img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery img.wide {
+  width: 600px;
+  max-width: 100%;
+}
+
+/* --- Animations douces --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main, header, footer {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.intro {
+  background: linear-gradient(135deg, #fef3c7, #e0f2fe);
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 4px 10px var(--shadow);
+}
